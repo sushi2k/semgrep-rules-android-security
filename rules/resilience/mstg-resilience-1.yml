@@ -17,10 +17,9 @@ rules:
       application on a rooted device questions the device integrity and affects
       users data.
     patterns:
-      - pattern-either:
-          - pattern-regex: |
+        - pattern-regex: |
               (?s)(.*)
-          - pattern-not-regex: .*isDeviceRooted(...)
+        - pattern-not-regex: .*isDeviceRooted(...)|.isRooted(...)
           
 
           # - pattern-not-inside: |
