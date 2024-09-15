@@ -18,11 +18,16 @@ rules:
       users data.
     patterns:
       - pattern-either:
-          - pattern-not-inside: |
-              $R.isDeviceRooted(...)
-          - pattern-not-inside: |
-              $R.isRooted(...)
-          - pattern-not-inside: |
-              RootTools.isAccessGiven(...)
-          - pattern-not-inside: |
-              $MTD.contains("test-keys")
+          - pattern-regex: |
+              (?s)(.*)
+          - pattern-not-regex: .*isDeviceRooted(...)
+          
+
+          # - pattern-not-inside: |
+          #     $R.isDeviceRooted(...)
+          # - pattern-not-inside: |
+          #     $R.isRooted(...)
+          # - pattern-not-inside: |
+          #     RootTools.isAccessGiven(...)
+          # - pattern-not-inside: |
+          #     $MTD.contains("test-keys")
