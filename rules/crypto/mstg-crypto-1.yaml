@@ -19,6 +19,12 @@ rules:
       symbolic_propagation: true
     pattern-either:
       - patterns:
+        - pattern: SecretKeySpec $_ = new SecretKeySpec($KEY, $ALGO);
+        - pattern: |-
+            byte[] $KEY = {...};
+            ...
+            new SecretKeySpec($KEY, $ALGO);
+      - patterns:
         - pattern: |
               class $CLASS{ ...
               byte[] $K = new byte[]{$X, ...};
