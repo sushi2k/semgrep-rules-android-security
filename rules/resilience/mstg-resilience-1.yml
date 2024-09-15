@@ -21,7 +21,7 @@ rules:
           - pattern: |
               $R.isDeviceRooted(...)
           - pattern: |              
-              *.singleRootDetection(...)
+              $R.singleRootDetection(...)
           - pattern: |
               $R.isRooted(...)
           - pattern: |
