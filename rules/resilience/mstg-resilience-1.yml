@@ -18,11 +18,11 @@ rules:
       users data.
     patterns:
       - pattern-either:
-          - pattern: |
+          - pattern-not: |
               $R.isDeviceRooted(...)
-          - pattern: |
+          - pattern-not: |
               $R.isRooted(...)
-          - pattern: |
+          - pattern-not: |
               RootTools.isAccessGiven(...)
-          - pattern: |
+          - pattern-not: |
               $MTD.contains("test-keys")
