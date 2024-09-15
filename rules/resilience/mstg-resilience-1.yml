@@ -17,16 +17,14 @@ rules:
       application on a rooted device questions the device integrity and affects
       users data.
     patterns:
-        - pattern-regex: |
-              (?s)(.*)
-        - pattern-not-regex: .*isDeviceRooted(...)|.isRooted(...)
-          
-
-          # - pattern-not-inside: |
-          #     $R.isDeviceRooted(...)
-          # - pattern-not-inside: |
-          #     $R.isRooted(...)
-          # - pattern-not-inside: |
-          #     RootTools.isAccessGiven(...)
-          # - pattern-not-inside: |
-          #     $MTD.contains("test-keys")
+      - pattern-either:
+          - pattern: |
+              $R.isDeviceRooted(...)
+          - pattern: |              
+              *.singleRootDetection(...)
+          - pattern: |
+              $R.isRooted(...)
+          - pattern: |
+              RootTools.isAccessGiven(...)
+          - pattern: |
+              $MTD.contains("test-keys")
