@@ -14,7 +14,7 @@ rules:
         - L2
       references:
         - https://github.com/OWASP/owasp-mastg/blob/v1.5.0/Document/0x05h-Testing-Platform-Interaction.md#determining-whether-java-objects-are-exposed-through-webviews-mstg-platform-7
-    message: The method "$X" is accessible from a WebView.
+    message: The method "$X" is accessible from a WebView through the annotation JavascriptInterface.
     pattern: |
       @JavascriptInterface
       public $X(...){...}
